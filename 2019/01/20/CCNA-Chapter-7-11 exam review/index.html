@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CCNA Chapter 7-11 Exam Review | 钟俊毅的学习笔记</title>
+  <meta name="keywords" content=" 计算机网络 , CCNA ">
+  <meta name="description" content="CCNA Chapter 7-11 Exam Review | 钟俊毅的学习笔记">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="#À propos de mon blog  Je suis… Permettez-moi de me présenter  我目前正在在巴黎高等电子学院读软件工程研一，多语种爱好者，母语台语（闽南语），汉语，英语，粤语，法语，流利程度依次排序。热衷分享编程技术、独立观点、革新、激烈、直面人性。热爱以背包客的方式旅行学习，欢迎交友！  De choses sérieuses ?  决定启用GitH">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于我">
+<meta property="og:url" content="http://jooeys.github.io/about/index.html">
+<meta property="og:site_name" content="钟俊毅的学习笔记">
+<meta property="og:description" content="#À propos de mon blog  Je suis… Permettez-moi de me présenter  我目前正在在巴黎高等电子学院读软件工程研一，多语种爱好者，母语台语（闽南语），汉语，英语，粤语，法语，流利程度依次排序。热衷分享编程技术、独立观点、革新、激烈、直面人性。热爱以背包客的方式旅行学习，欢迎交友！  De choses sérieuses ?  决定启用GitH">
+<meta property="article:published_time" content="2017-11-17T23:31:54.000Z">
+<meta property="article:modified_time" content="2018-11-13T22:04:31.490Z">
+<meta property="article:author" content="Jooeys">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Jooeys</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/jooeys" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/JooeyZhong" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="twitter" href="https://twitter.com/JUNYI_ZHONG" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-twitter"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/junyi-zhong/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/f526232b233c" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/SuncleZhong" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="juejin" href="https://juejin.im/user/57b6387a7db2a2005414c12d" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-juejin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:jyzh@yahoo.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1079194576&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=80161942" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(19)</small></div></li>
+    
+        
+            
+            <li><div data-rel="编程">编程<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="生活">生活<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="ISEP">ISEP<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="JYShare">JYShare<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="YWShare">YWShare<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="19">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://ferd.ca/the-little-printf.html">Le petit printf</a></li>
+            
+            <li><a target="_blank" href="https://www.cnblogs.com/xueweihan/p/5220513.html">削微寒的程序员之路</a></li>
+            
+            <li><a target="_blank" href="http://guzhenping.com/">谷震平</a></li>
+            
+            <li><a target="_blank" href="http://starxy.cc/">starxy</a></li>
+            
+            <li><a target="_blank" href="http://my.lsiten.cn/">Eric</a></li>
+            
+            <li><a target="_blank" href="https://www.jianshu.com/u/44339a8a9afa">程序员联盟</a></li>
+            
+            <li><a target="_blank" href="https://alonezero.github.io/">Alonezero</a></li>
+            
+            <li><a target="_blank" href="https://www.phodal.com/">Phodal</a></li>
+            
+            <li><a target="_blank" href="http://patrickwang.fr/">Patrickwang</a></li>
+            
+            <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+            
+            <li><a target="_blank" href="https://www.liaoxuefeng.com/">廖雪峰</a></li>
+            
+            <li><a target="_blank" href="https://www.clarkwan.com/">claekwan</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">计算机网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">CCNA</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">期末复习</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Le Petit Printf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">法国生活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">CyberSecurity</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">算法基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">计算机网络 - CCNA</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">留法生活</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2020/02/25/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-02-25 18:10:08">2020/02/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-8-Subnetting-IP-Networks/"
+           data-tag="计算机网络,CCNA,期末复习"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 8: Subnetting IP Networks">CCNA Chapter 8: Subnetting IP Networks</span>
+            <span class="post-date" title="2019-01-20 02:39:04">2019/01/20</span>
+        </a>
+        
+        <a  class="生活 "
+           href="/2017/11/18/%E3%80%8A%E5%AF%AB%E5%9C%A8%E6%B3%95%E8%98%AD%E8%A5%BF%E7%9A%84%E8%A9%A9%20%E2%80%A2%20%E5%A3%B9%E3%80%8B/"
+           data-tag="法国生活"
+           data-author="" >
+            <span class="post-title" title="寫在法蘭西的詩 • 壹">寫在法蘭西的詩 • 壹</span>
+            <span class="post-date" title="2017-11-18 02:15:07">2017/11/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-7-11%20exam%20review/"
+           data-tag="计算机网络,CCNA"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 7-11 Exam Review">CCNA Chapter 7-11 Exam Review</span>
+            <span class="post-date" title="2019-01-20 06:59:44">2019/01/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/11/13/Git%E5%92%8CGitHub%E7%94%A8%E6%B3%95%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git和GitHub用法简明手册">Git和GitHub用法简明手册</span>
+            <span class="post-date" title="2018-11-13 23:02:46">2018/11/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/12/11/Installer%20-%20Faire%20e%CC%81voluer%20les%20serveurs%20re%CC%81seaux%20GNU%20Linux/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Installer - Faire évoluer les serveurs réseaux GNU Linux">Installer - Faire évoluer les serveurs réseaux GNU Linux</span>
+            <span class="post-date" title="2017-12-11 00:44:46">2017/12/11</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2019/01/18/hexo%E9%85%8D%E7%BD%AE/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Hexo 配置">Hexo 配置</span>
+            <span class="post-date" title="2019-01-18 00:00:00">2019/01/18</span>
+        </a>
+        
+        <a  class="JYShare "
+           href="/2020/02/25/JYShare/"
+           data-tag="留法生活"
+           data-author="" >
+            <span class="post-title" title="金融科技每日分享">金融科技每日分享</span>
+            <span class="post-date" title="2020-02-25 00:00:00">2020/02/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/16/Git%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git分支创建管理">Git分支创建管理</span>
+            <span class="post-date" title="2019-01-16 00:00:00">2019/01/16</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2017/11/18/Linux%E7%9B%AE%E5%BD%95%E6%A0%91/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux系统根目录的学习">Linux系统根目录的学习</span>
+            <span class="post-date" title="2017-11-18 14:51:45">2017/11/18</span>
+        </a>
+        
+        <a  class="YWShare "
+           href="/2020/02/25/YWShare/"
+           data-tag="留法生活"
+           data-author="" >
+            <span class="post-title" title="金融科技每日分享">金融科技每日分享</span>
+            <span class="post-date" title="2020-02-25 00:00:00">2020/02/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/22/Le%20Petit%20Printf/"
+           data-tag="Le Petit Printf"
+           data-author="" >
+            <span class="post-title" title="Le Petit Printf">Le Petit Printf</span>
+            <span class="post-date" title="2019-01-22 15:59:44">2019/01/22</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2017/11/18/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux系统根目录的学习">Linux系统根目录的学习</span>
+            <span class="post-date" title="2017-11-18 14:51:45">2017/11/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-11-Build-a-Small-Network/"
+           data-tag="计算机网络,CCNA"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 11: Build a Small Network">CCNA Chapter 11: Build a Small Network</span>
+            <span class="post-date" title="2019-01-20 05:59:44">2019/01/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/21/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/"
+           data-tag="CyberSecurity"
+           data-author="" >
+            <span class="post-title" title="CyberSecurity Review">CyberSecurity Review</span>
+            <span class="post-date" title="2019-01-21 09:45:43">2019/01/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-10-Application-Layer/"
+           data-tag="计算机网络,CCNA,期末复习"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 10 Application Layer">CCNA Chapter 10 Application Layer</span>
+            <span class="post-date" title="2019-01-20 04:56:02">2019/01/20</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2017/11/20/%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"
+           data-tag="算法基础,数据结构,Java"
+           data-author="" >
+            <span class="post-title" title="算法设计与数据结构总结">算法设计与数据结构总结</span>
+            <span class="post-date" title="2017-11-20 00:25:31">2017/11/20</span>
+        </a>
+        
+        <a  class="ISEP "
+           href="/2019/01/20/CCNA-Chapter-7-IP-Addressing/"
+           data-tag="计算机网络,CCNA,期末复习"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 7: IP Addressing">CCNA Chapter 7: IP Addressing</span>
+            <span class="post-date" title="2019-01-20 01:39:04">2019/01/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-9-Transport-Layer/"
+           data-tag="计算机网络 - CCNA"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 9: Transport Layer">CCNA Chapter 9: Transport Layer</span>
+            <span class="post-date" title="2019-01-20 03:43:12">2019/01/20</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-CCNA-Chapter-7-11 exam review" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">CCNA Chapter 7-11 Exam Review</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color1">计算机网络</a>
+            
+            <a class="color5">CCNA</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-01-22 14:12:42'>2019-01-20 06:59</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>📚📚 <strong>设计可变长子网Designing VLSM addressing scheme</strong><br>📚📚 <strong>实际就是按需分配子网，根据所需主机数量来分配</strong></p>
+<center><embed src="./method_plan_adressage_EN_2018.pdf" width="850" height="1000"></center>
+
+<ul>
+<li><a href="https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-7-exam-answer-2017-100/" target="_blank" rel="noopener">https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-7-exam-answer-2017-100/</a></li>
+<li><a href="https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-8-exam-answer-2017-100/" target="_blank" rel="noopener">https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-8-exam-answer-2017-100/</a></li>
+<li><a href="https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-9-exam-answer-2017-100/" target="_blank" rel="noopener">https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-9-exam-answer-2017-100/</a></li>
+<li><a href="https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-10-exam-answer-2017-100/" target="_blank" rel="noopener">https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-10-exam-answer-2017-100/</a></li>
+<li><a href="https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-11-exam-answer-2017-100/" target="_blank" rel="noopener">https://www.ccna7.com/ccna1-v6-0/ccna1-v6-0-chapter-11-exam-answer-2017-100/</a></li>
+</ul>
+<p>An IPv4 address is divided into two parts: a network portion – to identify the specific network on which a host resides, and a host portion – to identify specific hosts on a network. A subnet mask is used to identify the length of each portion.</p>
+<ol>
+<li><strong>What are three characteristics of multicast transmission?</strong> </li>
+</ol>
+<ul>
+<li><p>A single packet can be sent to a group of hosts.</p>
+</li>
+<li><p>Multicast transmission can be used by routers to exchange routing information.</p>
+</li>
+<li><p>The range of 224.0.0.0 to 224.0.0.255 is reserved to reach multicast groups on a local network.</p>
+<p><strong>Explanation</strong>:The private IP addresses are within these three ranges:<br>10.0.0.0 – 10.255.255.255<br>172.16.0.0 – 172.31.255.255<br>192.168.0.0 – 192.168.255.255</p>
+</li>
+</ul>
+<ol start="2">
+<li><p><strong>Which three IP addresses are private ? (Choose three.)</strong></p>
+<p>​    The private IP addresses are within these three ranges:<br>​    10.0.0.0 – 10.255.255.255<br>​    172.16.0.0 – 172.31.255.255<br>​    192.168.0.0 – 192.168.255.255</p>
+</li>
+<li><p><strong>Which two IPv4 to IPv6 transition techniques manage the interconnection of IPv6 domains? (Choose two.)</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>dual stack</p>
+</li>
+<li><p>Network Address Translation 64 (NAT64) </p>
+</li>
+<li><p>tunneling</p>
+<p><strong>Explanation</strong>:There are three techniques to allow IPv4 and IPv6 to co-exist on a network. Dual stack allows IPv4 and IPv6 to coexist on the same network segment. Dual stack devices run both IPv4 and IPv6 protocol stacks simultaneously. Tunneling is a method of transporting an IPv6 packet over an IPv4 network. The IPv6 packet is encapsulated inside an IPv4 packet, similar to other types of data. Network Address Translation 64 (NAT64) allows IPv6-enabled devices to communicate with IPv4-enabled devices using a translation technique similar to NAT for IPv4.</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>What type of address is automatically assigned to an interface when IPv6 is enabled on that interface?</strong></li>
+</ol>
+<ul>
+<li><p>link-local</p>
+<p><strong>Explanation:</strong>When IPv6 is enabled on any interface, that interface will automatically generate an IPv6 link-local address.</p>
+</li>
+</ul>
+<ol start="5">
+<li><strong>What are two types of IPv6 unicast addresses? (Choose two.)</strong></li>
+</ol>
+<ul>
+<li><p>loopback</p>
+</li>
+<li><p>link-local</p>
+<p><strong>Explanation</strong>:Multicast, anycast, and unicast are types of IPv6 addresses. There is no broadcast address in IPv6. Loopback and link-local are specific types of unicast addresses</p>
+</li>
+</ul>
+<ol start="6">
+<li><strong>What are three parts of an IPv6 global unicast address? (Choose three.)</strong></li>
+</ol>
+<ul>
+<li>an interface ID that is used to identify the local host on the network</li>
+<li>a global routing prefix that is used to identify the network portion of the address that has been provided by an ISP</li>
+<li>a subnet ID that is used to identify networks inside of the local enterprise site</li>
+</ul>
+<ol start="7">
+<li><strong>An administrator wants to configure hosts to automatically assign IPv6 addresses to themselves by the use of Router Advertisement messages, but also to obtain the DNS server address from a DHCPv6 server. Which address assignment method should be configured?</strong></li>
+</ol>
+<ul>
+<li><p>stateless DHCPv6</p>
+<p><strong>Explanation</strong>:Stateless DHCPv6 allows clients to use ICMPv6 Router Advertisement (RA) messages to automatically assign IPv6 addresses to themselves, but then allows these clients to contact a DHCPv6 server to obtain additional information such as the domain name and address of DNS servers. SLAAC does not allow the client to obtain additional information through DHCPv6, and stateful DHCPv6 requires that the client receive its interface address directly from a DHCPv6 server. RA messages, when combined with an EUI-64 interface identifier, are used to automatically create an interface IPv6 address, and are part of both SLAAC and stateless DHCPv6.</p>
+</li>
+</ul>
+<ol start="8">
+<li><strong>Which protocol supports Stateless Address Autoconfiguration (SLAAC) for dynamic assignment of IPv6 addresses to a host?</strong></li>
+</ol>
+<ul>
+<li>ICMPv6</li>
+</ul>
+<ol start="9">
+<li><strong>What is the purpose of ICMP messages?</strong></li>
+</ol>
+<ul>
+<li>to provide feedback of IP packet transmissions</li>
+</ul>
+<ol start="10">
+<li><strong>What is indicated by a successful ping to the ::1 IPv6 address?</strong></li>
+</ol>
+<ul>
+<li>IP is properly installed on the host.</li>
+</ul>
+<p><strong>Explanation</strong>：The IPv6 address ::1 is the loopback address. A successful ping to this address means that the TCP/IP stack is correctly installed. It does not mean that any addresses are correctly configured.</p>
+<ol start="11">
+<li><strong>What field content is used by ICMPv6 to determine that a packet has expired?</strong></li>
+</ol>
+<ul>
+<li>Hop Limit field</li>
+</ul>
+<p><strong>Explanation:</strong>ICMPv6 sends a Time Exceeded message if the router cannot forward an IPv6 packet because the packet expired. The router uses a hop limit field to determine if the packet has expired, and does not have a TTL field.</p>
+<ol start="12">
+<li><strong>Match each description with an appropriate IP address.</strong> </li>
+</ol>
+<ul>
+<li><u>Link-Local addresses</u> are assigned automatically by the OS environment and are located in the block 169.254.0.0/16. </li>
+<li><u>The private addresses</u> ranges are 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. </li>
+<li><u>TEST-NET addresses</u> belong to the range 192.0.2.0/24. </li>
+<li><u>Experimental addresses</u> are reserved  in the block 240.0.0.0 to 255.255.255.254.  </li>
+<li><u>Loopback addresses</u> belong to the block 127.0.0.0/8.</li>
+</ul>
+<ol start="12">
+<li><strong>What is a result of connecting two or more switches together?</strong></li>
+</ol>
+<ul>
+<li>The size of the broadcast domain is increased.</li>
+</ul>
+<ol start="13">
+<li><p><strong>If a network device has a mask of /28, how many IP addresses are available for hosts on this network?</strong></p>
+<ul>
+<li>14<br><strong>Explanation</strong>:A /28 mask is the same as 255.255.255.240. This leaves 4 host bits(32-28=4 host bits). With 4 host bits, 16 IP addresses are possible, but one address represents the subnet number and one address represents the broadcast address. 14 addresses can then be used to assign to network devices. $2^4-2=16$</li>
+</ul>
+</li>
+</ol>
+<ol start="14">
+<li><p><strong>How many host addresses are available on the network 172.16.128.0 with a subnet mask of 255.255.252.0?</strong></p>
+<ul>
+<li>1022<br><strong>Explanation:</strong><br>A mask of 255.255.252.0 is equal to a prefix of /22. A /22 prefix provides 22 bits for the network portion and leaves 10 bits for the host portion. The 10 bits in the host portion will provide 1022 usable IP addresses (210 – 2 = 1022).</li>
+</ul>
+</li>
+<li><p><img src="/Users/junyi/jooeys.github.io/source/pics/subnetting example2.png" alt=""></p>
+</li>
+</ol>
+<p>16.</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jyzh@yahoo.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>CCNA Chapter 7-11 Exam Review</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="Jooeys">Jooeys</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-01-20, 06:59:44</p>
+    <p><span class="copy-title">最后更新:</span>2019-01-22, 14:12:42</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/01/20/CCNA-Chapter-7-11%20exam%20review/" title="CCNA Chapter 7-11 Exam Review">http://jooeys.github.io/2019/01/20/CCNA-Chapter-7-11%20exam%20review/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2020 Jooeys</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#计算机网络','#CCNA','#期末复习','#Git','#Linux','#Le Petit Printf','#法国生活','#CyberSecurity','#算法基础','#数据结构','#Java','#计算机网络 - CCNA','#留法生活',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

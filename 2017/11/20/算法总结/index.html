@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>算法设计与数据结构总结 | 钟俊毅的学习笔记</title>
+  <meta name="keywords" content=" 算法基础 , 数据结构 , Java ">
+  <meta name="description" content="算法设计与数据结构总结 | 钟俊毅的学习笔记">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="#À propos de mon blog  Je suis… Permettez-moi de me présenter  我目前正在在巴黎高等电子学院读软件工程研一，多语种爱好者，母语台语（闽南语），汉语，英语，粤语，法语，流利程度依次排序。热衷分享编程技术、独立观点、革新、激烈、直面人性。热爱以背包客的方式旅行学习，欢迎交友！  De choses sérieuses ?  决定启用GitH">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于我">
+<meta property="og:url" content="http://jooeys.github.io/about/index.html">
+<meta property="og:site_name" content="钟俊毅的学习笔记">
+<meta property="og:description" content="#À propos de mon blog  Je suis… Permettez-moi de me présenter  我目前正在在巴黎高等电子学院读软件工程研一，多语种爱好者，母语台语（闽南语），汉语，英语，粤语，法语，流利程度依次排序。热衷分享编程技术、独立观点、革新、激烈、直面人性。热爱以背包客的方式旅行学习，欢迎交友！  De choses sérieuses ?  决定启用GitH">
+<meta property="article:published_time" content="2017-11-17T23:31:54.000Z">
+<meta property="article:modified_time" content="2018-11-13T22:04:31.490Z">
+<meta property="article:author" content="Jooeys">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Jooeys</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/jooeys" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/JooeyZhong" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="twitter" href="https://twitter.com/JUNYI_ZHONG" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-twitter"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/junyi-zhong/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/f526232b233c" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/SuncleZhong" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="juejin" href="https://juejin.im/user/57b6387a7db2a2005414c12d" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-juejin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:jyzh@yahoo.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1079194576&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=80161942" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(19)</small></div></li>
+    
+        
+            
+            <li><div data-rel="编程">编程<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="生活">生活<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="ISEP">ISEP<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="JYShare">JYShare<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="YWShare">YWShare<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="19">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://ferd.ca/the-little-printf.html">Le petit printf</a></li>
+            
+            <li><a target="_blank" href="https://www.cnblogs.com/xueweihan/p/5220513.html">削微寒的程序员之路</a></li>
+            
+            <li><a target="_blank" href="http://guzhenping.com/">谷震平</a></li>
+            
+            <li><a target="_blank" href="http://starxy.cc/">starxy</a></li>
+            
+            <li><a target="_blank" href="http://my.lsiten.cn/">Eric</a></li>
+            
+            <li><a target="_blank" href="https://www.jianshu.com/u/44339a8a9afa">程序员联盟</a></li>
+            
+            <li><a target="_blank" href="https://alonezero.github.io/">Alonezero</a></li>
+            
+            <li><a target="_blank" href="https://www.phodal.com/">Phodal</a></li>
+            
+            <li><a target="_blank" href="http://patrickwang.fr/">Patrickwang</a></li>
+            
+            <li><a target="_blank" href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+            
+            <li><a target="_blank" href="https://www.liaoxuefeng.com/">廖雪峰</a></li>
+            
+            <li><a target="_blank" href="https://www.clarkwan.com/">claekwan</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">计算机网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">CCNA</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">期末复习</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Le Petit Printf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">法国生活</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">CyberSecurity</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">算法基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">计算机网络 - CCNA</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">留法生活</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2020/02/25/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-02-25 18:10:08">2020/02/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-8-Subnetting-IP-Networks/"
+           data-tag="计算机网络,CCNA,期末复习"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 8: Subnetting IP Networks">CCNA Chapter 8: Subnetting IP Networks</span>
+            <span class="post-date" title="2019-01-20 02:39:04">2019/01/20</span>
+        </a>
+        
+        <a  class="生活 "
+           href="/2017/11/18/%E3%80%8A%E5%AF%AB%E5%9C%A8%E6%B3%95%E8%98%AD%E8%A5%BF%E7%9A%84%E8%A9%A9%20%E2%80%A2%20%E5%A3%B9%E3%80%8B/"
+           data-tag="法国生活"
+           data-author="" >
+            <span class="post-title" title="寫在法蘭西的詩 • 壹">寫在法蘭西的詩 • 壹</span>
+            <span class="post-date" title="2017-11-18 02:15:07">2017/11/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-7-11%20exam%20review/"
+           data-tag="计算机网络,CCNA"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 7-11 Exam Review">CCNA Chapter 7-11 Exam Review</span>
+            <span class="post-date" title="2019-01-20 06:59:44">2019/01/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/11/13/Git%E5%92%8CGitHub%E7%94%A8%E6%B3%95%E7%AE%80%E6%98%8E%E6%89%8B%E5%86%8C/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git和GitHub用法简明手册">Git和GitHub用法简明手册</span>
+            <span class="post-date" title="2018-11-13 23:02:46">2018/11/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/12/11/Installer%20-%20Faire%20e%CC%81voluer%20les%20serveurs%20re%CC%81seaux%20GNU%20Linux/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Installer - Faire évoluer les serveurs réseaux GNU Linux">Installer - Faire évoluer les serveurs réseaux GNU Linux</span>
+            <span class="post-date" title="2017-12-11 00:44:46">2017/12/11</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2019/01/18/hexo%E9%85%8D%E7%BD%AE/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Hexo 配置">Hexo 配置</span>
+            <span class="post-date" title="2019-01-18 00:00:00">2019/01/18</span>
+        </a>
+        
+        <a  class="JYShare "
+           href="/2020/02/25/JYShare/"
+           data-tag="留法生活"
+           data-author="" >
+            <span class="post-title" title="金融科技每日分享">金融科技每日分享</span>
+            <span class="post-date" title="2020-02-25 00:00:00">2020/02/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/16/Git%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="Git分支创建管理">Git分支创建管理</span>
+            <span class="post-date" title="2019-01-16 00:00:00">2019/01/16</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2017/11/18/Linux%E7%9B%AE%E5%BD%95%E6%A0%91/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux系统根目录的学习">Linux系统根目录的学习</span>
+            <span class="post-date" title="2017-11-18 14:51:45">2017/11/18</span>
+        </a>
+        
+        <a  class="YWShare "
+           href="/2020/02/25/YWShare/"
+           data-tag="留法生活"
+           data-author="" >
+            <span class="post-title" title="金融科技每日分享">金融科技每日分享</span>
+            <span class="post-date" title="2020-02-25 00:00:00">2020/02/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/22/Le%20Petit%20Printf/"
+           data-tag="Le Petit Printf"
+           data-author="" >
+            <span class="post-title" title="Le Petit Printf">Le Petit Printf</span>
+            <span class="post-date" title="2019-01-22 15:59:44">2019/01/22</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2017/11/18/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux系统根目录的学习">Linux系统根目录的学习</span>
+            <span class="post-date" title="2017-11-18 14:51:45">2017/11/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-11-Build-a-Small-Network/"
+           data-tag="计算机网络,CCNA"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 11: Build a Small Network">CCNA Chapter 11: Build a Small Network</span>
+            <span class="post-date" title="2019-01-20 05:59:44">2019/01/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/21/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/"
+           data-tag="CyberSecurity"
+           data-author="" >
+            <span class="post-title" title="CyberSecurity Review">CyberSecurity Review</span>
+            <span class="post-date" title="2019-01-21 09:45:43">2019/01/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-10-Application-Layer/"
+           data-tag="计算机网络,CCNA,期末复习"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 10 Application Layer">CCNA Chapter 10 Application Layer</span>
+            <span class="post-date" title="2019-01-20 04:56:02">2019/01/20</span>
+        </a>
+        
+        <a  class="编程 "
+           href="/2017/11/20/%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"
+           data-tag="算法基础,数据结构,Java"
+           data-author="" >
+            <span class="post-title" title="算法设计与数据结构总结">算法设计与数据结构总结</span>
+            <span class="post-date" title="2017-11-20 00:25:31">2017/11/20</span>
+        </a>
+        
+        <a  class="ISEP "
+           href="/2019/01/20/CCNA-Chapter-7-IP-Addressing/"
+           data-tag="计算机网络,CCNA,期末复习"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 7: IP Addressing">CCNA Chapter 7: IP Addressing</span>
+            <span class="post-date" title="2019-01-20 01:39:04">2019/01/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/20/CCNA-Chapter-9-Transport-Layer/"
+           data-tag="计算机网络 - CCNA"
+           data-author="" >
+            <span class="post-title" title="CCNA Chapter 9: Transport Layer">CCNA Chapter 9: Transport Layer</span>
+            <span class="post-date" title="2019-01-20 03:43:12">2019/01/20</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-算法总结" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">算法设计与数据结构总结</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="编程">编程</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">算法基础</a>
+            
+            <a class="color5">数据结构</a>
+            
+            <a class="color5">Java</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-02-05 11:15:40'>2017-11-20 00:25</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章"><span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1．算法的形式化表示"><span class="toc-text">1．算法的形式化表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2．算法设计的步骤"><span class="toc-text">2．算法设计的步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3．算法时间复杂度的分类、O的定义"><span class="toc-text">3．算法时间复杂度的分类、O的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4．算法的性质"><span class="toc-text">4．算法的性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章"><span class="toc-text">第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1．-贪心法的定义"><span class="toc-text">1．    贪心法的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2．-贪心法的特点、基本要素-（包括其定义）"><span class="toc-text">2．    贪心法的特点、基本要素 （包括其定义）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3．单源最短路径、最优装载、分数背包问题（算法）、活动安排（算法包括证明）"><span class="toc-text">3．单源最短路径、最优装载、分数背包问题（算法）、活动安排（算法包括证明）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、算法基本思想"><span class="toc-text">1、算法基本思想</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、贪心选择性质"><span class="toc-text">2、贪心选择性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、最优子结构性质"><span class="toc-text">3、最优子结构性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三章"><span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1．-递归与分治的基本思想"><span class="toc-text">1．    递归与分治的基本思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2．-分治的基本步骤、特点"><span class="toc-text">2．    分治的基本步骤、特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3．-分治复杂度函数递归方程的推导（过程、结论）"><span class="toc-text">3．    分治复杂度函数递归方程的推导（过程、结论）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4．-二分搜索（算法）、快速排序和归并排序的排序过程及其时间复杂度、大整数乘法"><span class="toc-text">4．    二分搜索（算法）、快速排序和归并排序的排序过程及其时间复杂度、大整数乘法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四章"><span class="toc-text">第四章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1．-动态规划的基本思想、基本步骤-、基本要素"><span class="toc-text">1．    动态规划的基本思想、基本步骤 、基本要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2．-投资问题（算法）、0-1背包问题、最长公共子序列（算法）、矩阵连乘"><span class="toc-text">2．    投资问题（算法）、0-1背包问题、最长公共子序列（算法）、矩阵连乘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五章"><span class="toc-text">第五章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1．-回溯法的基本思想"><span class="toc-text">1．    回溯法的基本思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2．-回溯法解题步骤"><span class="toc-text">2．    回溯法解题步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3．-0-1背包问题、n后问题、图的M着色"><span class="toc-text">3．    0-1背包问题、n后问题、图的M着色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六章"><span class="toc-text">第六章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-分支限界法与回溯法的比较"><span class="toc-text">1.    分支限界法与回溯法的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-常见的两种分支限界法"><span class="toc-text">2.    常见的两种分支限界法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-0-1背包问题、装载问题"><span class="toc-text">3.    0-1背包问题、装载问题</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="1．算法的形式化表示"><a href="#1．算法的形式化表示" class="headerlink" title="1．算法的形式化表示"></a>1．算法的形式化表示</h3><p>算法是一个四元组（Q、I、Ω、f ）</p>
+<ul>
+<li>Q是一个集合，表示计算的状态</li>
+<li>I是Q的一个子集，表示计算的输入</li>
+<li>Ω 是Q的一个子集，表示计算的输出 </li>
+<li>f是Q到它自身的一个映射，表示计算的规则<h3 id="2．算法设计的步骤"><a href="#2．算法设计的步骤" class="headerlink" title="2．算法设计的步骤"></a>2．算法设计的步骤</h3>理解问题——分析精确解或近似解——选择数据结构和算法设计策略——设计算法——证明正确性——设计程序<h3 id="3．算法时间复杂度的分类、O的定义"><a href="#3．算法时间复杂度的分类、O的定义" class="headerlink" title="3．算法时间复杂度的分类、O的定义"></a>3．算法时间复杂度的分类、O的定义</h3>时间复杂度的分类：<br>按数量级递增排列，常见的时间复杂度有：</li>
+<li>常数阶O(1), 注意：1仅仅表示常数的意思；</li>
+<li>对数阶O(log2n),</li>
+<li>线性阶O(n),</li>
+<li>线性对数阶O(nlog2n),</li>
+<li>平方阶O(n2)，</li>
+<li>立方阶O(n3),…，</li>
+<li>k次方阶O(nk),</li>
+<li>指数阶O(2n) 。</li>
+</ul>
+<p>一般地，对于足够大的n，常用的时间复杂性存在以下顺序： </p>
+<blockquote>
+<p>O(1)&lt; O(logn)&lt; O(n)&lt; O(n*logn)&lt;O(n2)&lt;O(n3)…</p>
+</blockquote>
+<p>&lt;O(2n)&lt;O(3n)&lt;…&lt;O(n!) </p>
+<p>按照渐近阶从低到高的顺序排列以下表达式：</p>
+<blockquote>
+<p>4n2；  logn；  3n； 20n；  2； n2/3；   n！2  logn  n2/3  20n   4n2  3n   n！</p>
+</blockquote>
+<p>渐进上界记号O定义：渐进性态的几个记号O、Ω 、θ如果存在两个正的常数c,n0  使得当n&gt;n0时，有 T(n) ≤ c f(n) 称T(n)是O(f(n))的。f(n)是T(n)增长率的上界。如果存在两个正的常数c,n0  使得当n&gt;n0 时，有T(n) ≥ c f(n) 称T(n)是Ω(f(n))的。f(n)是T(n)增长率的下界。如果  T(n) =O(f(n)) 且  T(n) =Ω(f(n)) 则 T(n) = θ(f(n)</p>
+<h3 id="4．算法的性质"><a href="#4．算法的性质" class="headerlink" title="4．算法的性质"></a>4．算法的性质</h3><ul>
+<li>有穷性：一个算法必须总是在执行有穷步之后结束，且每一步都在有穷时间内完成。</li>
+<li>确定性：算法中每一条指令必须有确切的含义。不存在二义性。只有一个入口和一个出口</li>
+<li>可行性：一个算法是可行的就是算法描述的操作是可以通过已经实现的基本运算执行有限次来实现的。</li>
+<li>输入：一个算法有零个或多个输入，这些输入取自于某个特定对象的集合。<br>-输出：一个算法有一个或多个输出，这些输出同输入有着某些特定关系的量<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="1．-贪心法的定义"><a href="#1．-贪心法的定义" class="headerlink" title="1．    贪心法的定义"></a>1．    贪心法的定义</h3>指的是从对问题的某一初始解出发,一步一步的攀登给定的目标,尽可能快地去逼近更好的解。当达到某一步,不能再攀登时,算法便终止。<h3 id="2．-贪心法的特点、基本要素-（包括其定义）"><a href="#2．-贪心法的特点、基本要素-（包括其定义）" class="headerlink" title="2．    贪心法的特点、基本要素 （包括其定义）"></a>2．    贪心法的特点、基本要素 （包括其定义）</h3>贪心法的特点：<br>贪心算法总是做出在当前看来是最好的选择,它并不是从总体最优上加以考虑,他所作出的选择只是在某种意义上的局部最优选择。能够得到的解不一定是最优解。<br>基本要素及其定义：</li>
+<li>（1）贪心选择性质：指所求问题的整体最优解可以通过一系列局部最优的选择，即贪心选择来达到。这是贪心算法可行的第一个基本要素，也是贪心算法与动态规划算法的主要区别。</li>
+<li><p>（2）最优子结构性质：当一个问题的最优解包含其子问题的最优解时，称此问题具有最优子结构性质。题的最优子结构性质是该问题可用动态规划算法或贪心算法求解的关键特征。</p>
+<h3 id="3．单源最短路径、最优装载、分数背包问题（算法）、活动安排（算法包括证明）"><a href="#3．单源最短路径、最优装载、分数背包问题（算法）、活动安排（算法包括证明）" class="headerlink" title="3．单源最短路径、最优装载、分数背包问题（算法）、活动安排（算法包括证明）"></a>3．单源最短路径、最优装载、分数背包问题（算法）、活动安排（算法包括证明）</h3><p><strong>单源最短路径：</strong></p>
+</li>
+<li><p>【问题】<br>给定带权有向图G =(V,E)，其中每条边的权是非负实数。另外，还给定V中的一个顶点，称为源。现在要计算从源到所有其它各顶点的最短路长度。这里路的长度是指路上各边权之和。这个问题通常称为单源最短路径问题</p>
+</li>
+<li>【方法】    <h4 id="1、算法基本思想"><a href="#1、算法基本思想" class="headerlink" title="1、算法基本思想"></a>1、算法基本思想</h4>Dijkstra算法是解单源最短路径问题的贪心算法。<br>基本思想:设置顶点集合S并不断地作贪心选择来扩充这个集合。一个顶点属于集合S当且仅当从源到该顶点的最短路径长度已知。<br>初始时，S中仅含有源。设u是G的某一个顶点，把从源到u且中间只经过S中顶点的路称为从源到u的特殊路径，并用数组dist记录当前每个顶点所对应的最短特殊路径长度。<br>Dijkstra算法每次从V-S中取出具有最短特殊路长度的顶点u，将u添加到S中，同时对数组dist作必要的修改。一旦S包含了所有V中顶点，dist就记录了从源到所有其它顶点之间的最短路径长度。</li>
+</ul>
+<p>问题描述:<br>输入带权有向图G=(V，E)， V={1，2，…，n}，顶点V1是源<br>C[i][j]表示边(i,j)的权<br>dist[i]表示从源到顶点v1的最短特殊路径长度<br>prev[i]表示从源到顶点i的最短路径上i的前一个顶点<br>算法描述：<br>基本思想：设置顶点集合S并不断地作贪心选择来扩充这个集合。<br>S[i]—源点到i顶点的最短路径是否找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#初始化：</span><br><span class="line">for(i=1;i&lt;=n;i++)</span><br><span class="line">   &#123;s[i]=0;dist[i]=c[v1][i];&#125;</span><br><span class="line">S[v1]=1,dist[v1]=0;</span><br><span class="line">#每次从V-S中取出具有最短特殊路长度的顶点u，并将u添  加到S中</span><br><span class="line">for(num=2;num&lt;=n;num++)</span><br><span class="line"> &#123;从dist[2]到dist[n]选取一顶点u且满足s[u]=0,使dist[u]=min&#123;dist[2],dist[3],…,dist[n]&#125;;</span><br><span class="line">s[u]=1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Dijkstra算法每次从V-S中取出具有最短特殊路长度的顶点u，将u添加到S中后，同时对数组dist作必要的修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for(j=1;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line">  if(s[j]==0&amp;&amp;c[u][j]&lt;maxint)</span><br><span class="line">   &#123; newdist=dist[u]+c[u][j];</span><br><span class="line">     if(newdist&lt; dist[j]) </span><br><span class="line">      &#123;dist[j]=newdist;prev[j]=u;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>整个过程执行n-1次</p>
+<p><strong>最优装载：</strong></p>
+<ul>
+<li>【问题】有一批集装箱要装上一艘载重量为c的轮船。其中集装箱i的重量为Wi。最优装载问题要求确定在装载体积不受限制的情况下，将尽可能多的集装箱装上轮船。</li>
+<li>【方法】对最优装载问题进行形式化描述</li>
+</ul>
+<p>    用一个向量（x1,x2,x3,…,xn）,表示装的个数多少？<br>    约束条件：xi    ∈{ 0,1 }        </p>
+<p>    目标函数：<br>1、算法描述<br>•    最优装载问题可用贪心算法求解。<br>•    采用重量最轻者先装的贪心选择策略<br>•    可产生最优装载问题的最优解。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class Type&gt;</span><br><span class="line">void Loading(int x[],  Type w[], Type c, int n)</span><br><span class="line">&#123;</span><br><span class="line">        int *t = new int [n+1];</span><br><span class="line">        Sort(w, t, n);</span><br><span class="line">        for (int i = 1; i &lt;= n; i++) x[i] = 0;</span><br><span class="line">        for (int i = 1; i &lt;= n &amp;&amp; w[t[i]] &lt;= c; i++) </span><br><span class="line">             &#123;x[t[i]] = 1; c -= w[t[i]];&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、贪心选择性质"><a href="#2、贪心选择性质" class="headerlink" title="2、贪心选择性质"></a>2、贪心选择性质</h3><pre><code>可以证明最优装载问题具有贪心选择性。 
+</code></pre><h3 id="3、最优子结构性质"><a href="#3、最优子结构性质" class="headerlink" title="3、最优子结构性质"></a>3、最优子结构性质</h3><p>最优装载问题具有最优子结构性质。    由最优装载问题的贪心选择性质和最优子结构性质，容易证明算法loading的正确性。<br>算法loading的主要计算量在于将集装箱依其重量从小到大排序，故算法所需的计算时间为 O(nlogn)。</p>
+<p>分数背包问题（算法）：</p>
+<p>活动安排（算法包括证明）：<br>设有n个活动的集合E={1,2,…,n}，其中每个活动都要求使用同一资源，而在同一时间内只有一个活动能使用这一资源。每个活动i都有一个要求使用该资源的起始时间si和一个结束时间fi,且si &lt;fi 。如果选择了活动i，则它在半开时间区间[si, fi)内占用资源。<br>若区间[si, fi)与区间[sj, fj)不相交，则称活动i与活动j是相容的。也就是说，当si≥fj或sj≥fi时，活动i与活动j相容。</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><h3 id="1．-递归与分治的基本思想"><a href="#1．-递归与分治的基本思想" class="headerlink" title="1．    递归与分治的基本思想"></a>1．    递归与分治的基本思想</h3><p>分治法的基本思想：将一个规模为n的问题分解为k个规模较小的子问题，这些子问题互相独立且与原问题相同。<br>递归的基本思想：直接或间接地调用自身，通常把一个大型复杂的问题层层转化为一个与原问题相似的规模较小的问题来求解。</p>
+<h3 id="2．-分治的基本步骤、特点"><a href="#2．-分治的基本步骤、特点" class="headerlink" title="2．    分治的基本步骤、特点"></a>2．    分治的基本步骤、特点</h3><p>基本步骤：</p>
+<ul>
+<li>（1）    分解：将原问题分解成若干个规模较小互相独立与原问题形式相同的子问题；</li>
+<li>（2）    解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题； </li>
+<li>（3）    合并：将各个子问题的解合并为原问题的解。</li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>（1）该问题的规模缩小到一定的程度就可以容易地解决； </li>
+<li>（2）该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质； </li>
+<li>（3）利用该问题分解出的子问题的解可以合并为该问题的解； </li>
+<li>（4）该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子子问题</li>
+</ul>
+<h3 id="3．-分治复杂度函数递归方程的推导（过程、结论）"><a href="#3．-分治复杂度函数递归方程的推导（过程、结论）" class="headerlink" title="3．    分治复杂度函数递归方程的推导（过程、结论）"></a>3．    分治复杂度函数递归方程的推导（过程、结论）</h3><p>一个分治法将规模为n的问题分成k个规模为n／m的子问题去解。设分解阀值n0=1，且adhoc解规模为1的问题耗费1个单位时间。再设将原问题分解为k个子问题以及用merge将k个子问题的解合并为原问题的解需用f(n)个单位时间。用T(n)表示该分治法解规模为|P|=n的问题所需的计算时间，则有：</p>
+<p>通过迭代法求得递归方程的解：</p>
+<p>求出该算法时间复杂度函数：<br>O(logn)</p>
+<h3 id="4．-二分搜索（算法）、快速排序和归并排序的排序过程及其时间复杂度、大整数乘法"><a href="#4．-二分搜索（算法）、快速排序和归并排序的排序过程及其时间复杂度、大整数乘法" class="headerlink" title="4．    二分搜索（算法）、快速排序和归并排序的排序过程及其时间复杂度、大整数乘法"></a>4．    二分搜索（算法）、快速排序和归并排序的排序过程及其时间复杂度、大整数乘法</h3><p>二分搜索（算法）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int binarySearch(int a[], const int&amp; x, int n)</span><br><span class="line">&#123;</span><br><span class="line">    int left=0, right=n-1;</span><br><span class="line">    while (left &lt;= right)</span><br><span class="line">    &#123;</span><br><span class="line">        int middle = (left+right)/2;</span><br><span class="line">        if (x==a[middle])</span><br><span class="line">        &#123;</span><br><span class="line">            return middle;</span><br><span class="line">        &#125;</span><br><span class="line">        if (x &gt; a[middle])</span><br><span class="line">        &#123;</span><br><span class="line">            left = middle+1;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            right = middle-1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[] = &#123;1,2,5,7,8,10&#125;;</span><br><span class="line">    printf(&quot;%d\n&quot;,binarySearch(a,8,6));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>复杂度分析：<br>每执行一次算法的while循环， 待搜索数组的大小减少一半。因此，在最坏情况下，while循环被执行了O(logn) 次。循环体内运算需要O(1) 时间，因此整个算法在最坏情况下的计算时间复杂性为O(logn) 。<br>快速排序过程以及其时间复杂度：<br>在这种方法中， n 个元素被分成三段（组）：左段l e f t，右段r i g h t和中段m i d d l e。中段仅包含一个元素。左段中各元素都小于等于中段元素，右段中各元素都大于等于中段元素。因此l e f t和r i g h t中的元素可以独立排序，并且不必对l e f t和r i g h t的排序结果进行合并。m i d d l e中的元素被称为支点( p i v o t )。图1 4 - 9中给出了快速排序的伪代码。<br>　　/ /使用快速排序方法对a[ 0 :n- 1 ]排序<br>　　从a[ 0 :n- 1 ]中选择一个元素作为m i d d l e，该元素为支点<br>　　把余下的元素分割为两段left 和r i g h t，使得l e f t中的元素都小于等于支点，而right 中的元素都大于等于支点<br>　　递归地使用快速排序方法对left 进行排序<br>　　递归地使用快速排序方法对right 进行排序<br>　　所得结果为l e f t + m i d d l e + r i g h t<br>　　考察元素序列[ 4 , 8 , 3 , 7 , 1 , 5 , 6 , 2 ]。假设选择元素6作为支点，则6位于m i d d l e；4，3，1，5，2位于l e f t；8，7位于r i g h t。当left 排好序后，所得结果为1，2，3，4，5；当r i g h t排好序后，所得结果为7，8。把right 中的元素放在支点元素之后， l e f t中的元素放在支点元素之前，即可得到最终的结果[ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 ]。<br>　　把元素序列划分为l e f t、m i d d l e和r i g h t可以就地进行（见程序1 4 - 6）。在程序1 4 - 6中，支点总是取位置1中的元素。也可以采用其他选择方式来提高排序性能，本章稍后部分将给出这样一种选择。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">程序14-6 快速排序</span><br><span class="line">template&lt;class T&gt; </span><br><span class="line">　　void QuickSort(T*a, int n) </span><br><span class="line">　　&#123;// 对a[0:n-1] 进行快速排序 </span><br><span class="line">　　&#123;// 要求a[n] 必需有最大关键值 </span><br><span class="line">　　quickSort(a, 0, n-1); </span><br><span class="line">　　template&lt;class T&gt; </span><br><span class="line">　　void quickSort(T a[], int l, int r) </span><br><span class="line">　　&#123;// 排序a [ l : r ]， a[r+1] 有大值 </span><br><span class="line">　　if (l &gt;= r) return; </span><br><span class="line">　　int i = l, // 从左至右的游标 </span><br><span class="line">　　j = r + 1; // 从右到左的游标 </span><br><span class="line">　　T pivot = a[l]; </span><br><span class="line">　　// 把左侧&gt;= pivot的元素与右侧&lt;= pivot 的元素进行交换 </span><br><span class="line">　　while (true) &#123; </span><br><span class="line">　　do &#123;// 在左侧寻找&gt;= pivot 的元素 </span><br><span class="line">　　i = i + 1; </span><br><span class="line">　　&#125; while (a &lt; pivot); </span><br><span class="line">　　do &#123;// 在右侧寻找&lt;= pivot 的元素 </span><br><span class="line">　　j = j - 1; </span><br><span class="line">　　&#125; while (a[j] &gt; pivot); </span><br><span class="line">　　if (i &gt;= j) break; // 未发现交换对象 </span><br><span class="line">　　Swap(a, a[j]); </span><br><span class="line">　　&#125; </span><br><span class="line">　　// 设置p i v o t </span><br><span class="line">　　a[l] = a[j]; </span><br><span class="line">　　a[j] = pivot; </span><br><span class="line">　　quickSort(a, l, j-1); // 对左段排序 </span><br><span class="line">　　quickSort(a, j+1, r); // 对右段排序 </span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure></p>
+<p>归并排序过程以及其时间复杂度：<br>归并是指将若干个已排好序的部分合并成一个有序的部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">//将有二个有序子数组a[begin...mid]和a[mid+1...end]合并。</span><br><span class="line">void MergeArray(int a[],int begin,int mid,int end,int temp[])</span><br><span class="line">&#123;</span><br><span class="line">	int i=begin,j=mid+1;</span><br><span class="line">	int m=mid,n=end;</span><br><span class="line">	int k=0;</span><br><span class="line"></span><br><span class="line">	while(i&lt;=m &amp;&amp; j&lt;=n)</span><br><span class="line">	&#123;</span><br><span class="line">		if(a[i]&lt;=a[j])</span><br><span class="line">			temp[k++]=a[i++];</span><br><span class="line">		else</span><br><span class="line">			temp[k++]=a[j++];</span><br><span class="line">	&#125;</span><br><span class="line">	while(i&lt;=m)</span><br><span class="line">		temp[k++]=a[i++];</span><br><span class="line">	while(j&lt;=n)</span><br><span class="line">		temp[k++]=a[j++];</span><br><span class="line">	</span><br><span class="line">	//把temp数组中的结果装回a数组</span><br><span class="line">	for(i=0;i&lt;k;i++)   </span><br><span class="line">		a[begin+i]=temp[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void mergesort(int a[],int begin,int end,int temp[])</span><br><span class="line">&#123;</span><br><span class="line">	if(begin&lt;end)</span><br><span class="line">	&#123;</span><br><span class="line">		int mid = (begin+end)/2;</span><br><span class="line">		mergesort(a,begin,mid,temp);   //左边有序</span><br><span class="line">		mergesort(a,mid+1,end,temp);   //右边有序</span><br><span class="line">		MergeArray(a,begin,mid,end,temp); //将左右两边有序的数组合并</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int num[10]=&#123;2,5,9,3,6,1,0,7,4,8&#125;;</span><br><span class="line">	int temp[10];</span><br><span class="line">	mergesort(num,0,9,temp);</span><br><span class="line">	for(int i=0;i&lt;10;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d&quot;,num[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>归并排序的最好、最坏和平均时间复杂度都是O(nlogn)，而空间复杂度是O(n)，比较次数介于(nlogn)/2和(nlogn)-n+1，赋值操作的次数是(2nlogn)。因此可以看出，归并排序算法比较占用内存，但却是效率高且稳定的排序算法。</p>
+<p>大整数乘法：</p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><h3 id="1．-动态规划的基本思想、基本步骤-、基本要素"><a href="#1．-动态规划的基本思想、基本步骤-、基本要素" class="headerlink" title="1．    动态规划的基本思想、基本步骤 、基本要素"></a>1．    动态规划的基本思想、基本步骤 、基本要素</h3><p>-动态规划的基本思想：<br>基本思想：把求解的问题分成许多阶段或多个子问题，然后按顺序求解各个子问题。前一个子问题的解为后一个子问题的求解提供了有用的信息。在求解任何一子问题时，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解，依次解决各子问题，最后一个子问题就是问题的解将待求解问题分解成若干个子问题，先求解子问题，然后从这些子问题的解得到原问题的解</p>
+<p>动态规划基本步骤：</p>
+<ul>
+<li>（1）分析最优解的性质，并刻画其结构特征。 </li>
+<li>（2）递归地定义最优值。 </li>
+<li>（3）以自底向上的方式或自顶向下的记忆化方法（备忘录法）计算出最优值。 </li>
+<li>（4）根据计算最优值时得到的信息，构造一个最优解。</li>
+</ul>
+<p>动态规划基本要素：<br>（1）最优子结构<br>（2）重叠子问题<br>（3）备忘录方法</p>
+<h3 id="2．-投资问题（算法）、0-1背包问题、最长公共子序列（算法）、矩阵连乘"><a href="#2．-投资问题（算法）、0-1背包问题、最长公共子序列（算法）、矩阵连乘" class="headerlink" title="2．    投资问题（算法）、0-1背包问题、最长公共子序列（算法）、矩阵连乘"></a>2．    投资问题（算法）、0-1背包问题、最长公共子序列（算法）、矩阵连乘</h3><p>投资问题（算法）：</p>
+<p>0-1背包问题：</p>
+<p>最长公共子序列（算法）：</p>
+<p>矩阵连乘：</p>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><h3 id="1．-回溯法的基本思想"><a href="#1．-回溯法的基本思想" class="headerlink" title="1．    回溯法的基本思想"></a>1．    回溯法的基本思想</h3><p>基本思想:按照深度优先策略，从根结点出发搜索解空间。算法搜索至解空间的任一结点时总是先判断该结点是否问题的约束条件。如果满足进入该子树，继续按深度优先的策略搜索。否则，不去搜索以该结点为根的子树，而是逐层向其祖先结点回溯。其实回溯法就是对隐式图的深度优先搜索算法</p>
+<h3 id="2．-回溯法解题步骤"><a href="#2．-回溯法解题步骤" class="headerlink" title="2．    回溯法解题步骤"></a>2．    回溯法解题步骤</h3><ol>
+<li>确定问题的解空间：应用回溯法时，首先应明确定义问题的解的空间。问题的解空间应至少包含问题的一个解。</li>
+<li>确定结点的扩展规则</li>
+<li>搜索解空间：从开始结点出发，以深度优先的方式搜索整个解空间。</li>
+</ol>
+<h3 id="3．-0-1背包问题、n后问题、图的M着色"><a href="#3．-0-1背包问题、n后问题、图的M着色" class="headerlink" title="3．    0-1背包问题、n后问题、图的M着色"></a>3．    0-1背包问题、n后问题、图的M着色</h3><p>0-1背包问题：<br>给定N中物品和一个背包。物品i的重量是Wi,其价值位Vi ，背包的容量为C。问应该如何选择装入背包的物品，使得转入背包的物品的总价值为最大？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int c=30;    //背包容量</span><br><span class="line">int n=3;    //对象数目</span><br><span class="line">int w[]=&#123;20,15,15&#125;;  //对象重量数组</span><br><span class="line">int v[]=&#123;40,25,25&#125;;  //对象收益数组</span><br><span class="line">int cw;   //当前背包重量</span><br><span class="line">int cv;   //当前背包价值</span><br><span class="line">int bestv;//迄今最大的收益</span><br><span class="line">int X[n];  //记录在树中的移动路径,为1的时候表示选择该组数据，为0的表示不选择该组数据</span><br><span class="line"></span><br><span class="line">void getBest(int i)</span><br><span class="line">&#123;</span><br><span class="line">    if(i&gt;=n)//递归结束的判定条件</span><br><span class="line">    &#123;</span><br><span class="line">        if(cv&gt;bestv)</span><br><span class="line">            bestv=cv;</span><br><span class="line"></span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if(cw+w[i]&lt;=c)//进入该节点的右孩子（值为1的孩子）</span><br><span class="line">    &#123;</span><br><span class="line">        X[i]=1;</span><br><span class="line">        cw+=w[i];</span><br><span class="line">        cv+=v[i];</span><br><span class="line">        getBest(i+1);</span><br><span class="line">        cw-=w[i];//此处回溯</span><br><span class="line">        cv-=v[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    X[i]=0;//进入该节点的右孩子（值为0的孩子）</span><br><span class="line">    getBest(i+1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    getBest(0);</span><br><span class="line">    printf(&quot;%d&quot;,bestv);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">n后问题：</span><br><span class="line">		Eightqueen( )</span><br><span class="line">&#123;  x[1]=1; k=1;</span><br><span class="line">   do &#123; if(x[k]&lt;=8)</span><br><span class="line">           &#123; die=0</span><br><span class="line">              for (i=1; i&lt;k; i++)</span><br><span class="line">                &#123; if (x[i]=x[k]) &#123; die=1; break &#125;</span><br><span class="line">                   if (x[k]-x[i])=abs(k-i)) &#123; die=1; break &#125;</span><br><span class="line">                 &#125; </span><br><span class="line">              if(die=1) x[k]=x[k]+1 else&#123;k=k+1; x[k]=1&#125;</span><br><span class="line">            &#125; </span><br><span class="line">           else &#123; x[k]=1; k=k-1;  x[k]=x[k]+1; &#125;</span><br><span class="line">       &#125; while(k&lt;=8  and k&gt;0)</span><br><span class="line">    if(k&gt;8) output x[i]..x[8]  else output no solve</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#图的M着色：</span><br><span class="line">mcoloring( )</span><br><span class="line">&#123;  x[1]=1; k=1;</span><br><span class="line">   do &#123; if(x[k]&lt;=m)</span><br><span class="line">           &#123; die=0</span><br><span class="line">              for (i=1; i&lt;k; i++)</span><br><span class="line">                if (x[i]=x[k] and c[i][k]=1) &#123; die=1; break &#125;</span><br><span class="line">              if(die=1) x[k]=x[k]+1 else&#123;k=k+1; x[k]=1&#125;</span><br><span class="line">            &#125; </span><br><span class="line">           else &#123; x[k]=1; k=k-1;  x[k]=x[k]+1; &#125;</span><br><span class="line">       &#125; while(k&lt;=n  and k&gt;0)</span><br><span class="line">    if(k&gt;n) output x[i]..x[n]  else output no solve</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><h3 id="1-分支限界法与回溯法的比较"><a href="#1-分支限界法与回溯法的比较" class="headerlink" title="1.    分支限界法与回溯法的比较"></a>1.    分支限界法与回溯法的比较</h3><p>（1）    求解目标：回溯法的求解目标是找出解空间树中满足约束条件的所有解，而分支限界法的求解目标则是找出满足约束条件的一个解，或是在满足约束条件的解中找出在某种意义下的最优解<br>（2）    搜索方式的不同：回溯法以深度优先的方式搜索解空间树，而分支限界法则以广度优先或以最小耗费优先的方式搜索解空间树。 </p>
+<h3 id="2-常见的两种分支限界法"><a href="#2-常见的两种分支限界法" class="headerlink" title="2.    常见的两种分支限界法"></a>2.    常见的两种分支限界法</h3><p>（1）队列式(FIFO)分支限界法<br>    按照队列先进先出（FIFO）原则选取下一个节点为扩展节点。<br>（2）优先队列式分支限界法<br>    按照优先队列中规定的优先级选取优先级最高的节点成为当前扩展节点。</p>
+<h3 id="3-0-1背包问题、装载问题"><a href="#3-0-1背包问题、装载问题" class="headerlink" title="3.    0-1背包问题、装载问题"></a>3.    0-1背包问题、装载问题</h3><p>0-1背包问题：<br>   首先，要对输入数据进行预处理，将各物品依其单位重量价值从大到小进行排列。<br>在下面描述的优先队列分支限界法中，节点的优先级由已装袋的物品价值加上剩下的最大单位重量价值的物品装满剩余容量的价值和。<br>算法首先检查当前扩展结点的左儿子结点的可行性。如果该左儿子结点是可行结点，则将它加入到子集树和活结点优先队列中。当前扩展结点的右儿子结点一定是可行结点，仅当右儿子结点满足上界约束时才将它加入子集树和活结点优先队列。当扩展到叶节点时为问题的最优值。<br>上界函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">while (i &lt;= n &amp;&amp; w[i] &lt;= cleft)       // n表示物品总数，cleft为剩余空间</span><br><span class="line">      &#123;</span><br><span class="line">         cleft -= w[i];                            //w[i]表示i所占空间</span><br><span class="line">         b += p[i];                                 //p[i]表示i的价值</span><br><span class="line">         i++;</span><br><span class="line">      &#125;</span><br><span class="line">if (i &lt;= n) b += p[i] / w[i] * cleft;    // 装填剩余容量装满背包</span><br><span class="line">return b;                                       //b为上界函数</span><br><span class="line"></span><br><span class="line">while (i != n+1) &#123;// 非叶结点</span><br><span class="line">      // 检查当前扩展结点的左儿子结点</span><br><span class="line">      Typew wt = cw + w[i];</span><br><span class="line">      if (wt &lt;= c) &#123;// 左儿子结点为可行结点</span><br><span class="line">         if (cp+p[i] &gt; bestp) bestp = cp+p[i];</span><br><span class="line">         AddLiveNode(up, cp+p[i], cw+w[i], true, i+1);&#125;</span><br><span class="line">         up = Bound(i+1);</span><br><span class="line">      // 检查当前扩展结点的右儿子结点</span><br><span class="line">      if (up &gt;= bestp) // 右子树可能含最优解</span><br><span class="line">           AddLiveNode(up, cp, cw, false, i+1);</span><br><span class="line">         //   取下一个扩展节点（略）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>装载问题：</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jyzh@yahoo.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>算法设计与数据结构总结</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="Jooeys">Jooeys</a></p>
+    <p><span class="copy-title">发布时间:</span>2017-11-20, 00:25:31</p>
+    <p><span class="copy-title">最后更新:</span>2018-02-05, 11:15:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2017/11/20/%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" title="算法设计与数据结构总结">http://jooeys.github.io/2017/11/20/%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2020 Jooeys</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#计算机网络','#CCNA','#期末复习','#Git','#Linux','#Le Petit Printf','#法国生活','#CyberSecurity','#算法基础','#数据结构','#Java','#计算机网络 - CCNA','#留法生活',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
